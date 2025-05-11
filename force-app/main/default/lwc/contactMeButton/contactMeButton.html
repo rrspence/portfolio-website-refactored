@@ -1,0 +1,21 @@
+<template>
+    <section class="slds-p-around_medium">
+        <dialog class="contact-dialog">
+            <form onsubmit={handleSubmit} class="slds-form">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="first-name">First Name</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" id="first-name" class="slds-input firstname" />
+                    </div>
+                </div>
+
+                <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                    <button type="submit" class="slds-button slds-button_brand">Submit</button>
+                    <button type="button" class="slds-button slds-button_neutral" onclick={closeDialog}>Cancel</button>
+                </div>
+            </form>
+        </dialog>
+
+        <lightning-button label="Contact Me" onclick={showDialog} variant="brand"></lightning-button>
+    </section>
+</template>
