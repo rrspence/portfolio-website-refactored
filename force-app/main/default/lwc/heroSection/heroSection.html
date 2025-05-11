@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-grid slds-wrap slds-grid_align-center slds-p-around_medium">
+        <!-- Image Column -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_small">
+            <img src={imgURL} alt="Photo of Rahim Spencer" class="slds-image slds-image_border slds-radius_medium" />
+        </div>
+
+        <!-- Text Column -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-align_absolute-center slds-text-align_center slds-p-around_small">
+            <div>
+                <h1 class="slds-text-heading_large slds-m-bottom_small">My name is Rahim Spencer</h1>
+                <p class="slds-text-heading_medium slds-m-bottom_medium">Let's do business together!</p>
+                <lightning-button label="Contact Me" onclick={handleClick} variant="brand"></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>
