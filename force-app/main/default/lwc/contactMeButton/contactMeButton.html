@@ -2,12 +2,45 @@
     <section class="slds-p-around_medium">
         <dialog class="contact-dialog">
             <form onsubmit={handleSubmit} class="slds-form">
-                <div class="slds-form-element">
-                    <label class="slds-form-element__label" for="first-name">First Name</label>
-                    <div class="slds-form-element__control">
-                        <input type="text" id="first-name" class="slds-input firstname" />
-                    </div>
-                </div>
+                <!-- First Name -->
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="first-name">First Name</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="first-name" class="slds-input firstname" />
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="slds-form-element slds-m-top_medium">
+            <label class="slds-form-element__label" for="last-name">Last Name</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="last-name" class="slds-input lastname" />
+            </div>
+        </div>
+
+        <!-- Company -->
+        <div class="slds-form-element slds-m-top_medium">
+            <label class="slds-form-element__label" for="company">Company</label>
+            <div class="slds-form-element__control">
+                <input type="text" id="company" class="slds-input company" />
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="slds-form-element slds-m-top_medium">
+            <label class="slds-form-element__label" for="email">Email</label>
+            <div class="slds-form-element__control">
+                <input type="email" id="email" class="slds-input email" />
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="slds-form-element slds-m-top_medium">
+            <label class="slds-form-element__label" for="description">What would you like to talk about?</label>
+            <div class="slds-form-element__control">
+                <textarea id="description" class="slds-textarea description" rows="4"></textarea>
+            </div>
+        </div>
 
                 <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
                     <button type="submit" class="slds-button slds-button_brand">Submit</button>
