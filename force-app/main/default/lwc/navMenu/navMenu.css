@@ -1,0 +1,32 @@
+.nav-wrapper {
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-wrapper a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-wrapper a:hover {
+    color: #ddd;
+    background-color: #222;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-wrapper.responsive .nav-links {
+        display: block;
+        width: 100%;
+    }
+
+    .nav-wrapper.responsive .nav-links a {
+        display: block;
+        padding: 0.75rem;
+    }
+}
