@@ -1,4 +1,6 @@
 import { LightningElement } from 'lwc';
+import createLead from '@salesforce/apex/ContactMeController.createLead';
+
 
 export default class ContactMeButton extends LightningElement {
     dialog;
@@ -7,6 +9,7 @@ export default class ContactMeButton extends LightningElement {
     company;
     email;
     description;
+    snackbar;
 
     renderedCallback() {
         if (!this.dialog) {
@@ -16,6 +19,7 @@ export default class ContactMeButton extends LightningElement {
             this.company = this.template.querySelector('.company');
             this.email = this.template.querySelector('.email');
             this.description = this.template.querySelector('.description');
+            this.snackbar = this.template.querySelector('c-snackbar');
         }
     }    
 
@@ -38,8 +42,19 @@ export default class ContactMeButton extends LightningElement {
             description: this.description.value
         };
     
-        console.log('Form submitted with:', data);
-        this.closeDialog();
-    }
+        console.log('Attempting to create lead:', JSON.stringify(data));
+    
+        createLead(data)
+            .then(() => {
+                this.snackbar.showsnackbar('✅ Your request has been received!');
+                this.closeDialog();
+            })
+            .catch(error => {
+                console.error('Apex error:', error);
+                const msg = error?.body?.message || '⚠️ Something went wrong. Please try again.';
+                this.snackbar.showsnackbar(msg);
+            });            
+            
+        }
     
 }
